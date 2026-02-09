@@ -1,0 +1,17 @@
+{
+  "iam_role_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "jeremiah-cloud-audit-test-role"
+  },
+  "s3_bucket_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "jeremiah-cloud-audit-2e48df"
+  },
+  "security_group_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "sg-08ea21f535a50b08d"
+  }
+}
