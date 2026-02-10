@@ -1,156 +1,126 @@
-\# Evidence-Based Evaluation of Automated Cloud Security Controls
+Evidence-Based Evaluation of Automated Cloud Security Controls
 
+## Overview
 
+This repository contains the hands-on technical component of a master’s research project focused on evaluating the effectiveness and limitations of automated cloud security controls in AWS environments.
 
-\## Overview
+The project examines how Infrastructure as Code (Terraform) and Python-based automation can be used to detect common cloud misconfigurations, while also highlighting where automation alone is insufficient. The emphasis is on evidence-based analysis rather than assumptions about secure-by-default cloud configurations.
 
-This repository contains the hands-on component of a master’s research project focused on evaluating the effectiveness and limitations of automated cloud security controls. The project examines how Infrastructure as Code and scripting-based automation can be used to identify cloud misconfigurations, while also highlighting where automation falls short.
-
-
-
-The work prioritizes evidence-based analysis over assumptions about secure-by-default cloud environments.
-
-
+This repository represents the practical implementation that supports a graduate-level research paper.
 
 ---
 
+## Project Objectives
 
-
-\## Project Goals
-
-\- Deploy a reproducible AWS cloud environment using Infrastructure as Code
-
-\- Introduce controlled and intentional security misconfigurations
-
-\- Programmatically collect security-relevant configuration data
-
-\- Analyze findings to assess what automated checks detect and miss
-
-\- Support research-driven conclusions about cloud security automation
-
-
+- Deploy a reproducible AWS environment using Infrastructure as Code  
+- Introduce controlled and intentional cloud security misconfigurations  
+- Programmatically collect security-relevant configuration data  
+- Analyze which risks are detected and which are missed by automation  
+- Support research-driven conclusions about cloud security governance  
 
 ---
 
+## Technologies Used
 
+**Cloud Platform**
+- Amazon Web Services (AWS)
 
-\## Technologies Used
+**Infrastructure as Code**
+- Terraform
 
-\- \*\*Cloud Provider:\*\* AWS  
+**Scripting and Analysis**
+- Python
+- Boto3 (AWS SDK for Python)
 
-\- \*\*Infrastructure as Code:\*\* Terraform  
-
-\- \*\*Scripting \& Analysis:\*\* Python  
-
-
-
-\*\*Security Focus Areas\*\*
-
-\- IAM policy permissions
-
-\- S3 public access configuration
-
-\- Network exposure via security groups
-
-
+**Security Focus Areas**
+- Identity and Access Management (IAM) permissions  
+- S3 public access configuration  
+- Network exposure through security group rules  
 
 ---
 
+## Repository Structure
 
-
-\## Repository Structure
-
-.
-
-├── main.tf
-
-├── variables.tf
-
-├── terraform.tfvars
-
+├── Terraform/
+│ ├── main.tf
+│ ├── variables.tf
+│ └── terraform.lock.hcl
+│
+├── Python/
+│ ├── audit_cloud.py
+│ ├── finding.json
+│ ├── terraform_outputs.json
+│ └── requirements.txt
+│
 ├── README.md
+└── python_parsing_output.png
 
 
-
----
-
-
-
-\## Infrastructure Summary
-
-The Terraform configuration deploys a minimal AWS environment containing:
-
-
-
-\- An S3 bucket with public access controls disabled
-
-\- A security group with an overly permissive inbound rule
-
-\- An IAM role attached to an intentionally over-permissive policy
-
-
-
-These configurations are intentional and controlled and exist solely for evaluation and learning purposes.
-
-
+Terraform state files and provider artifacts are excluded via `.gitignore`.
 
 ---
 
+## Infrastructure Summary
 
+The Terraform configuration provisions a minimal AWS environment containing:
 
-\## Methodology
+- An S3 bucket with public access protections disabled  
+- A security group allowing overly permissive inbound access  
+- An IAM role attached to an intentionally over-permissive policy  
 
-1\. Provision cloud infrastructure using Terraform
-
-2\. Establish baseline configurations and known misconfigurations
-
-3\. Collect configuration data programmatically
-
-4\. Analyze results to identify detected risks and blind spots
-
-5\. Document findings and limitations for research analysis
-
-
+All misconfigurations are intentional, isolated, and created solely for research and learning purposes.
 
 ---
 
+## Methodology
 
-
-\## Scope and Limitations
-
-\- This repository is not a production-ready security tool
-
-\- The environment is limited to a single AWS account and a small set of services
-
-\- Findings focus on detection capability, not automated remediation
-
-
+1. Provision AWS infrastructure using Terraform  
+2. Establish known misconfigurations  
+3. Export Terraform outputs for analysis  
+4. Collect AWS configuration data using Python and Boto3  
+5. Analyze detected risks and automation blind spots  
+6. Document findings for academic evaluation  
 
 ---
 
+## Findings Summary
 
+The Python audit script identifies:
 
-\## Cleanup
+- Publicly accessible S3 bucket configurations  
+- Overly permissive security group rules  
+- IAM roles with excessive permissions  
 
+Results demonstrate that automation reliably detects common misconfigurations, while reinforcing that context and architectural intent still require human judgment.
+
+---
+
+## Scope and Limitations
+
+- Not a production security tool  
+- Limited to a small, controlled AWS environment  
+- Focuses on detection rather than remediation  
+- Single-account evaluation  
+
+---
+
+## Cleanup
+
+To remove all deployed resources:
+
+```bash
 terraform destroy
 
+---
+---
 
+## Academic Context
+
+This repository supports a master’s research paper examining cloud misconfiguration risk, automation bias in security tooling, and the role of Infrastructure as Code in cloud security governance.
 
 ---
 
+## Key Takeaway
 
-
-\## Academic Context
-
-This project supports a master’s research paper examining cloud misconfiguration risk, automation bias, and the role of Infrastructure as Code in cloud security governance.
-
-
-
----
-
-
-
-\## Key Takeaway
-
-Automation improves consistency, but it does not eliminate cloud security risk. Automated controls must be evaluated with evidence to understand their effectiveness and limitations.
+Automation improves visibility and consistency, but it does not eliminate cloud security risk. Automated controls must be evaluated using evidence to understand both their strengths and their limitations.
 
