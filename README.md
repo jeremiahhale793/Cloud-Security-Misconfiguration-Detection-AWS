@@ -39,26 +39,6 @@ This repository represents the practical implementation that supports a graduate
 
 ---
 
-## Repository Structure
-
-Terraform/
-├── main.tf
-├── variables.tf
-├── terraform.lock.hcl
-
-Python/
-├── audit_cloud.py
-├── findings.json
-├── terraform_outputs.json
-├── requirements.txt
-
-README.md
-python_parsing_output.png
-
-Terraform state files and provider artifacts are excluded via `.gitignore`.
-
----
-
 ## Infrastructure Summary
 
 The Terraform configuration provisions a minimal AWS environment containing:
@@ -107,7 +87,6 @@ Results demonstrate that automation reliably detects common misconfigurations, w
 
 To remove all deployed resources:
 
-```bash
 terraform destroy
 
 ---
