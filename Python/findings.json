@@ -1,5 +1,5 @@
 [
-  "[HIGH] S3 bucket 'jeremiah-cloud-audit-2e48df' has Public Access Block settings disabled: BlockPublicAcls, IgnorePublicAcls, BlockPublicPolicy, RestrictPublicBuckets",
-  "[HIGH] Security Group 'sg-08ea21f535a50b08d' allows inbound from 0.0.0.0/0 on ports 22-22 (SSH exposure).",
+  "[HIGH] S3 bucket 'jeremiah-cloud-audit-3b257e' has Public Access Block settings disabled: BlockPublicAcls, IgnorePublicAcls, BlockPublicPolicy, RestrictPublicBuckets",
+  "[HIGH] Security Group 'sg-0ed2f2ceb79925c0a' allows inbound from 0.0.0.0/0 on ports 22-22 (SSH exposure).",
   "[HIGH] IAM role 'jeremiah-cloud-audit-test-role' has an over-permissive policy attached: arn:aws:iam::307946661146:policy/jeremiah-cloud-audit-over-permissive (Allow '*' on '*')."
 ]

@@ -7,11 +7,11 @@
   "s3_bucket_name": {
     "sensitive": false,
     "type": "string",
-    "value": "jeremiah-cloud-audit-2e48df"
+    "value": "jeremiah-cloud-audit-3b257e"
   },
   "security_group_id": {
     "sensitive": false,
     "type": "string",
-    "value": "sg-08ea21f535a50b08d"
+    "value": "sg-0ed2f2ceb79925c0a"
   }
 }
