@@ -41,20 +41,19 @@ This repository represents the practical implementation that supports a graduate
 
 ## Repository Structure
 
-├── Terraform/
-│ ├── main.tf
-│ ├── variables.tf
-│ └── terraform.lock.hcl
-│
-├── Python/
-│ ├── audit_cloud.py
-│ ├── finding.json
-│ ├── terraform_outputs.json
-│ └── requirements.txt
-│
-├── README.md
-└── python_parsing_output.png
+Terraform/
+├── main.tf
+├── variables.tf
+├── terraform.lock.hcl
 
+Python/
+├── audit_cloud.py
+├── findings.json
+├── terraform_outputs.json
+├── requirements.txt
+
+README.md
+python_parsing_output.png
 
 Terraform state files and provider artifacts are excluded via `.gitignore`.
 
@@ -111,7 +110,6 @@ To remove all deployed resources:
 ```bash
 terraform destroy
 
----
 ---
 
 ## Academic Context
